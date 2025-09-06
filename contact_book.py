@@ -10,6 +10,9 @@ class ContactBook:
 
     def add_contact(self, name, phone, email, address):
         name_key = name.lower()
+        if name_key in self.contacts:
+            raise ValueError("Contact already exists!")
+
         contact = Contact(name, phone, email, address)
         self.contacts[name_key] = contact
         self.save_contact()
@@ -46,6 +49,8 @@ class ContactBook:
 
         self.save_contact()
         return True
+
+
     def save_contact(self):
         data = {
             'contacts': {
@@ -84,6 +89,3 @@ class ContactBook:
     def debug_types(self):
         for name, val in self.contacts.items():
             print(type(name), type(val))
-
-contacts = ContactBook()
-contacts.update_contact('ralph','asdioj')

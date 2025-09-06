@@ -1,6 +1,13 @@
 
 class Contact:
     def __init__(self, name, phone, email, address):
+        if not name.strip():
+            raise ValueError("Name cannot be empty")
+        if not phone.isdigit():
+            raise ValueError("Phone must be numeric")
+        if '@' not in email:
+            raise ValueError("Invalid email format")
+        
         self.name = name.lower()
         self.phone = phone
         self.email = email
@@ -10,7 +17,7 @@ class Contact:
     #     return f"Name: {self.name.title()}, \nPhone No. {self.phone}, \nEmail: {self.email}, \nAddress: {self.address}"
 
     def __str__(self) -> str:
-        return f"{self.name} | {self.phone} | {self.email} | {self.address}"
+        return f"Name: {self.name} | Phone: {self.phone} | Email: {self.email} | Address: {self.address}"
     
     def to_dict(self):
         return {

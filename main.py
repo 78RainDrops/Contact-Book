@@ -4,23 +4,36 @@ from contact_book import ContactBook
 OPTIONS = ('Add Contact', 'View Contacts', 'Search Contacts', 'Update Contacts', 'Delete Contacts', 'Exit')
 
 def main():
-    contacts = ContactBook()
-    print("__MENU__")
-    [print(i+1, option) for i, option in enumerate(OPTIONS)]
+    while True: 
+        contacts = ContactBook()
+        print("\n__MENU__")
+        [print(i+1, option) for i, option in enumerate(OPTIONS)]
 
-    choice = int(input("Enter the number of choice: "))
-    if choice == 1:
-        add_contact(contacts)
-    elif choice == 2:
-        get_contacts(contacts)            
-    elif choice == 3:
-        name = search(contacts)
-        print(name)
-    elif choice == 4:
-        update_name(contacts)
-    elif choice == 5:
-        delete(contacts)
-       
+        choice = int(input("Enter the number of choice: "))
+        if choice  not in range(1,7):
+            print("Invalid Choice")
+            continue
+    
+        if choice == 1:
+            try:
+                add_contact(contacts)
+            except Exception as e:
+                print(e)
+                continue
+        elif choice == 2:
+            print("Contact List")
+            get_contacts(contacts)            
+        elif choice == 3:
+            name = search(contacts)
+            print(name)
+        elif choice == 4:
+            update_name(contacts)
+        elif choice == 5:
+            delete(contacts)
+        elif choice == 6:
+            print("Exiting...")
+            break
+        
 
 
 def add_contact(contacts):
