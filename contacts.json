@@ -1,19 +1,24 @@
 {
     "contacts": {
         "aenze": {
-            "phone": "01234556329",
+            "address": "taga AMo",
             "email": "aenze@gmail.com",
-            "address": "taga AMo"
+            "phone": "01234556329"
         },
-        "tree": {
-            "phone": "09320949",
-            "email": "sdfadfa@gmail.com",
-            "address": "asdfasd"
+        "borj": {
+            "address": "taga ila",
+            "email": "broj@gmail.com",
+            "phone": "949494"
         },
         "lorence": {
-            "phone": "01234556789",
+            "address": "taga AMo",
             "email": "lorence@gmail.com",
-            "address": "taga AMo"
+            "phone": "01234556789"
+        },
+        "tree": {
+            "address": "asdfasd",
+            "email": "sdfadfa@gmail.com",
+            "phone": "09320949"
         }
     }
 }
