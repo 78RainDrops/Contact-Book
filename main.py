@@ -17,14 +17,9 @@ def main():
         name = search(contacts)
         print(name)
     elif choice == 4:
-        # print('''What to update?
-        #       1. Name
-        #       2. Phone no.
-        #       3. Email
-        #       4. Address''')
-        # update_choice = int(input('Choice: '))
-        # if update_choice == 1:
         update_name(contacts)
+    elif choice == 5:
+        delete(contacts)
        
 
 
@@ -49,14 +44,19 @@ def update_name(contacts):
     oldname = input('Who to update: ')
     # name = contacts.search_contacts(who_to_update.lower())
     # print(name)
-    print("Leave the field blank if don't want to update")
+    print("Leave the field blank if don't want to update\n(Press Enter to skip)")
     new_name = input('New Name: ')
     new_phone = input('New Phone: ')
     new_email = input('New Email: ')
     new_address = input('New Address')
     
     return contacts.update_contact(oldname, new_name, new_phone, new_email, new_address)
-    
+
+
+def delete(contacts):
+    name = input("Enter Contact Name: ")
+    return contacts.delete_contact(name)
+
 
 if __name__ == "__main__":
     main()

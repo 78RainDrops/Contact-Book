@@ -57,6 +57,18 @@ class ContactBook:
             json.dump(data, f, indent=4)
 
 
+    def delete_contact(self, name):
+        namekey = name.lower()
+        if namekey in self.contacts:
+            del self.contacts[namekey]
+            self.save_contact()
+            print('Delete Successfully')
+            return True
+        else:
+            print(f"Contact {namekey} not found ")
+            return False
+
+
     def load_contact(self):
         try:
             with open(self.filename) as f:

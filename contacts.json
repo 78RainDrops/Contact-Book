@@ -1,10 +1,5 @@
 {
     "contacts": {
-        "lorance": {
-            "phone": "01234556789",
-            "email": "lorence@gmail.com",
-            "address": "taga AMo"
-        },
         "aenze": {
             "phone": "01234556329",
             "email": "aenze@gmail.com",
@@ -15,9 +10,9 @@
             "email": "sdfadfa",
             "address": "asdfasd"
         },
-        "asdioj": {
+        "lorence": {
             "phone": "01234556789",
-            "email": "aricayos@gmail.com",
+            "email": "lorence@gmail.com",
             "address": "taga AMo"
         }
     }
