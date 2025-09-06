@@ -1,4 +1,6 @@
 import json
+import csv
+
 from contact import Contact
 
 class ContactBook:
@@ -85,7 +87,33 @@ class ContactBook:
 
         except FileNotFoundError:
             pass
-    
+
+
+    def export_to_csv(self):
+        FIELDNAMES = ["Name", 'Phone', 'Email', 'Address']
+        data = {'contacts':
+            {
+                name: c.to_dict()
+                for name, c in self.contacts.items()        
+            }
+        }
+        with open('contacts.csv', 'w',newline="")as f:
+            print("Exporting....")
+            writer = csv.DictWriter(f, fieldnames=FIELDNAMES)
+            writer.writeheader()
+            for name, details in data['contacts'].items():
+                writer.writerow({
+                    "Name" : name,
+                    "Phone" : details['phone'],
+                    "Email" : details['email'],
+                    "Address" : details['address']
+                })
+            print('Contacts has been exported as csv.')
+
+
     def debug_types(self):
         for name, val in self.contacts.items():
             print(type(name), type(val))
+
+# book = ContactBook()
+# book.export_to_csv()

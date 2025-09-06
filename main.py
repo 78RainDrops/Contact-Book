@@ -22,14 +22,28 @@ def main():
                 continue
         elif choice == 2:
             print("Contact List")
-            get_contacts(contacts)            
+            get_contacts(contacts)
+            while True:
+                choice = input("\nDo you want to export to CSV? (y/n): ")
+                if choice not in ['y','n','Y','N']:
+                    print("Choice not valid. Only y/n: ")
+                    continue
+
+                if choice in ['y', 'Y']:
+                    contacts.export_to_csv()
+
+                break
+  
         elif choice == 3:
             name = search(contacts)
             print(name)
+
         elif choice == 4:
             update_name(contacts)
+
         elif choice == 5:
             delete(contacts)
+
         elif choice == 6:
             print("Exiting...")
             break
