@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: contactWho
+Version: 0.1
+Summary: Contact Book
+Author: 78RainDrops
+Author-email: smileyrence3@gmail.com
+Requires-Dist: requests
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-dist
+Dynamic: summary
