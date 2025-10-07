@@ -1,2 +1,3 @@
 .venv
 contact_book/ContactWho.egg-info
+*.txt
